@@ -1,0 +1,35 @@
+# SQL
+SQL Portfolio
+
+CREATE TABLE cosmetic store (id INTEGER PRIMARY KEY, name Text, price INTEGER, popularity INTEGER);
+
+INSERT INTO store VALUES (1, "FOUNDATION", 10.99, 60);
+INSERT INTO store VALUES (2, "CONSEALER", 7.99, 70);
+INSERT INTO store VALUES (3, "LIPSTICK", "BULLK", 9.99, 95);
+INSERT INTO store VALUES (4,"EYESHADOW", 8.99, 10);
+INSERT INTO store VALUES (5, "HIGHLIGHTER", 10.99, 9);
+INSERT INTO store VALUES (6, "FOUNDATION BRUSH", 10.99, 65)
+INSERT INTO store VALUES (7, "BLUSH", 7.59, 50)
+INSERT INTO store VALUES (8, "MOISTURIZER", 10.99, 65)
+INSERT INTO store VALUES (9, "MASKS", 5.99, 25)
+INSERT INTO store VALUES (10, "EYE LINER", 8.99, 50)
+INSERT INTO store VALUES (11, "MAKEUP REMOVER", 5.89, 60)
+INSERT INTO store VALUES (12, "LIP LINER", 8.99, "BULK", 95)
+INSERT INTO store VALUES (13, "CONTOUR", 12.99, 50)
+INSERT INTO store VALUES (14, "EYEBROW PENCIL", 8.99, 50)
+INSERT INTO store VALUES (15, "SETTING SPRAY", 12.99, 55)
+
+--display the database ordered by price
+SELECT * FROM store
+ORDER BY price desc;
+
+--What is the avg price of the items in the bulk section?
+SELECT AVG(price) "avg bulk item price"
+FROM store
+WHERE section='bulk';
+
+--what are the most 5 popular items?
+SELECT items, price, popularity
+FROM store
+ORDER BY popularity desc
+limit 5;
